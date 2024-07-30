@@ -1,4 +1,33 @@
-<script></script>
+<script>
+import axios from 'axios';
+
+export default {
+  name: 'Projects',
+  data() {
+    return {
+      projects: [],
+    }
+  },
+  methods: {
+    getProjects() {
+      const result = axios.get('http://127.0.0.1:8000/api/projects').then((response) => {
+        console.log(response);
+        if (response.data.success && response.data.results.length) {
+          console.log('gestione risultati');
+          console.log(response.data.results);
+
+          this.projects = response.data.results;
+        } else {
+          console.log('qualcosa è andato storto');
+        }
+      }).catch(error => console.log(error));
+    },
+  },
+  created() {
+    this.getProjects();
+  }
+};
+</script>
 <template>
   <div class="container">
     <h1>Vue Vite Template</h1>
