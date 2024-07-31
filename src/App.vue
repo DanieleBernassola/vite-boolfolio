@@ -1,5 +1,8 @@
 <script>
 import axios from 'axios';
+import HeaderComponent from './components/AppHeader.vue';
+import FooterComponent from './components/AppFooter.vue';
+import CardComponent from './components/ProjectCard.vue';
 
 export default {
   name: 'Projects',
@@ -25,14 +28,22 @@ export default {
   },
   created() {
     this.getProjects();
+  },
+  components: {
+    HeaderComponent,
+    FooterComponent,
+    CardComponent,
   }
 };
 </script>
 <template>
+  <HeaderComponent></HeaderComponent>
   <div class="container">
     <h1>Vue Vite Template</h1>
     <p>Template per progetti Vue con Vite</p>
+    <CardComponent></CardComponent>
     <font-awesome-icon :icon="['fas', 'user-secret']" />
   </div>
+  <FooterComponent></FooterComponent>
 </template>
 <style></style>

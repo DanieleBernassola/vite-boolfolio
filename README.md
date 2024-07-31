@@ -25,5 +25,18 @@ Milestone 5
 Creiamo un nuovo componente ProjectCard, che corrisponde ad una card per visualizzare un progetto. Utilizziamo questo componente per visualizzare tutti i progetti ricevuti tramite API.
 
 Bonus:
-
 Gestire la paginazione dei risultati
+
+Ecco i task da completare:
+
+aggiungere una pagina di dettaglio di progetto (frontend)
+aggiungere sistema di paginazione (frontend)
+La pagina di dettaglio dovrà avere tutte le informazioni del progetto e le informazioni relazionate.
+
+Vi lascio inoltre qualche bonus:
+
+Aggiungere campi e sistema di filtro sul backend (in draft, in evidenza)
+Aggiungere sistema di filtro sul frontend (in evidenza), mostrando i relativi progetti in homepage
+Aggiungere un campo di ricerca per titolo (frontend / backend)
+Creazione di un nuovo progetto da frontend (base)
+Creazione di un nuovo progetto da frontend con caricamento immagine.
