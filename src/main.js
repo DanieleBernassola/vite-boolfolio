@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import { router } from "./router";
 
 // import style
 import "./assets/scss/main.scss";
@@ -21,4 +22,7 @@ import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 /* add icons to the library */
 library.add(faUserSecret);
 
-createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount("#app");
+createApp(App)
+  .use(router)
+  .component("font-awesome-icon", FontAwesomeIcon)
+  .mount("#app");

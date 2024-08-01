@@ -3,6 +3,7 @@ import axios from 'axios';
 import HeaderComponent from './components/AppHeader.vue';
 import FooterComponent from './components/AppFooter.vue';
 import CardComponent from './components/ProjectCard.vue';
+import { RouterView } from 'vue-router';
 
 export default {
   name: 'Projects',
@@ -41,7 +42,7 @@ export default {
   <div class="container">
     <h1>Vue Vite Template</h1>
     <p>Template per progetti Vue con Vite</p>
-    <CardComponent></CardComponent>
+    <routerView></routerView>
     <font-awesome-icon :icon="['fas', 'user-secret']" />
   </div>
   <FooterComponent></FooterComponent>
