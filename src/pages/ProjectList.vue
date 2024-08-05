@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios';
+import ProjectCard from '../components/ProjectCard.vue';
 
 export default {
   name: 'ProjectList',
@@ -13,6 +14,9 @@ export default {
       },
       response: {},
     }
+  },
+  components: {
+    ProjectCard,
   },
   methods: {
     getProjects() {
@@ -44,8 +48,9 @@ export default {
   <h1>Projects</h1>
 
   <div class="row">
-    <div class="col-12 col-md-6 col-lg-4" v-for="project in response.results">
-      card project
+    <div class="col-12 col-md-6 col-lg-4 gy-4" v-for="project in response.results">
+      <projectCard :title="project.title" :slug="project.slug" :content="project.content" :time="project.created_at">
+      </projectCard>
     </div>
   </div>
 </template>
