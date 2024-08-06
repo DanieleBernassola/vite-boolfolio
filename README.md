@@ -29,8 +29,9 @@ Gestire la paginazione dei risultati
 
 Ecco i task da completare:
 
-aggiungere una pagina di dettaglio di progetto (frontend)
-aggiungere sistema di paginazione (frontend)
+<!-- aggiungere una pagina di dettaglio di progetto (frontend) -->
+<!-- aggiungere sistema di paginazione (frontend) -->
+
 La pagina di dettaglio dovrà avere tutte le informazioni del progetto e le informazioni relazionate.
 
 Vi lascio inoltre qualche bonus:

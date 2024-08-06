@@ -10,7 +10,7 @@ export default {
       <h5 class="card-title">{{ title }}</h5>
       <p class="card-text">{{ content }}</p>
       <router-link :to="{ name: 'detail', params: { slug } }"><button
-          class="btn btn-primary">Dettagli</button></router-link>
+          class="btn btn-light">Dettagli</button></router-link>
     </div>
   </div>
 </template>

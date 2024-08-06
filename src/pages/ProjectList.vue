@@ -13,12 +13,19 @@ export default {
         }
       },
       response: {},
+      currentPage: 1,
     }
   },
   components: {
     ProjectCard,
   },
   methods: {
+    prevPage() {
+
+    },
+    nextPage() {
+
+    },
     getProjects() {
 
       const url = this.api.baseUrl + this.api.endPoints.projectList;
@@ -49,6 +56,12 @@ export default {
   <h1>Projects</h1>
 
   <div class="row">
+    <nav>
+      <ul class="list-unstyled d-flex justify-content-between">
+        <li><button class="btn btn-secondary" @click="prevPage">Prev</button></li>
+        <li><button class="btn btn-primary" @click="nextPage">Next</button></li>
+      </ul>
+    </nav>
     <div class="col-12 col-md-6 col-lg-4 gy-4" v-for="project in response">
       <projectCard :title="project.title" :slug="project.slug" :content="project.content" :time="project.created_at">
       </projectCard>
