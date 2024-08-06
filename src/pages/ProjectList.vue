@@ -26,11 +26,12 @@ export default {
       console.log(url);
 
       axios.get(url).then((response) => {
-        if (response.data.success && response.data.results.length) {
+        if (response.data.success && response.data.results.data.length) {
           console.log('gestione risultati');
-          // console.log(response.data.results);
 
-          this.response = response.data
+          console.log(response.data.results);
+
+          this.response = response.data.results.data
 
           // this.projects = response.data.results;
         } else {
@@ -48,7 +49,7 @@ export default {
   <h1>Projects</h1>
 
   <div class="row">
-    <div class="col-12 col-md-6 col-lg-4 gy-4" v-for="project in response.results">
+    <div class="col-12 col-md-6 col-lg-4 gy-4" v-for="project in response">
       <projectCard :title="project.title" :slug="project.slug" :content="project.content" :time="project.created_at">
       </projectCard>
     </div>
