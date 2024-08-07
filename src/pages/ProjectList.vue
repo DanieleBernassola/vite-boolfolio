@@ -21,10 +21,12 @@ export default {
   },
   methods: {
     prevPage() {
-
+      this.currentPage--;
+      this.getProjects();
     },
     nextPage() {
-
+      this.currentPage++;
+      this.getProjects();
     },
     getProjects() {
 
@@ -32,13 +34,17 @@ export default {
 
       console.log(url);
 
-      axios.get(url).then((response) => {
+      axios.get(url, {
+        params: {
+          page: this.currentPage
+        }
+      }).then((response) => {
         if (response.data.success && response.data.results.data.length) {
           console.log('gestione risultati');
 
           console.log(response.data.results);
 
-          this.response = response.data.results.data
+          this.response = response.data.results
 
           // this.projects = response.data.results;
         } else {
@@ -58,11 +64,11 @@ export default {
   <div class="row">
     <nav>
       <ul class="list-unstyled d-flex justify-content-between">
-        <li><button class="btn btn-secondary" @click="prevPage">Prev</button></li>
-        <li><button class="btn btn-primary" @click="nextPage">Next</button></li>
+        <li><button class="btn btn-secondary" @click="prevPage" v-if="response.prev_page_url">Prev</button></li>
+        <li><button class="btn btn-primary" @click="nextPage" v-if="response.next_page_url">Next</button></li>
       </ul>
     </nav>
-    <div class="col-12 col-md-6 col-lg-4 gy-4" v-for="project in response">
+    <div class="col-12 col-md-6 col-lg-4 gy-4" v-for="project in response.data">
       <projectCard :title="project.title" :slug="project.slug" :content="project.content" :time="project.created_at">
       </projectCard>
     </div>
